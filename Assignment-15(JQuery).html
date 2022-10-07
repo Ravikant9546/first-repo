@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery Assignment</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+     
+<script>
+   $(document).ready(function(){
+    $('#submit').click(function(){
+        let firstname=$("#fname").val();
+        if(firstname.trim()===""){
+                $("#errorfname").show();
+                return false;
+             }
+             else{
+                $("#errorfname").hide();
+             }
+
+
+             let lastname=$("#lname").val();
+        if(lastname.trim()===""){
+                $("#errorlname").show();
+                return false;
+             }
+             else{
+                $("#errorlname").hide();
+             }
+
+             let gender=$(".Gender").is(":checked");
+       if(gender==false){
+        $("#errorgender").show();
+        return false;
+
+       }
+       else{
+        $("#errorgender").hide();
+       }
+
+
+        
+
+             let address=$("#inputAddress").val();
+        if(address.trim()===""){
+                $("#erroraddress").show();
+                return false;
+             }
+             else{
+                $("#erroraddress").hide();
+             }
+
+
+             let city=$("#inputCity").val();
+        if(city.trim()===""){
+                $("#errorcity").show();
+                return false;
+             }
+             else{
+                $("#errorcity").hide();
+             }
+
+
+             let state=$("#inputState").val();
+        if(state===""){
+                $("#errorstate").show();
+                return false;
+             }
+             else{
+                $("#errorstate").hide();
+             }
+
+
+             let zip=$("#inputZip").val();
+        if(zip.trim()===""){
+                $("#errorzip").show();
+                return false;
+             }
+             else{
+                $("#errorzip").hide();
+             }
+
+
+             
+             let email=$("#InputEmail1").val();
+        if(email.trim()===""){
+                $("#erroremail").show();
+                return false;
+             }
+             else{
+                $("#erroremail").hide();
+             }
+
+             let password=$("#InputPassword").val();
+        if(password.trim()===""){
+                $("#errorpassword").show();
+                return false;
+             }
+             else{
+                $("#errorpassword").hide();
+             }
+
+          let check=$('#terms').is(":checked");
+          if(check===false){
+            $("#checked").show();
+            return false;
+          }
+          else{
+            $("#checked").hide();
+          }
+            
+    
+   
+             
+                
+
+    });
+   });
+
+
+
+
+    </script>   
+</head>
+<body>
+    <section class="container-fluid">
+        <section class="form" id="form" >
+        <section class="row" >
+            <section class="col" >
+                <label for="first name" class="form-label">First Name</label>
+              <input type="text" class="form-control" id="fname" placeholder="First name" aria-label="First name">
+          <span id="errorfname"> ** This Field is Required!! </span>
+            </section>
+            <section class="col" >
+                <label for="last name" class="form-label">Last Name*</label>
+              <input type="text" class="form-control" id="lname" placeholder="Last name" aria-label="Last name">
+              <span id="errorlname"> ** This Field is Required!! </span>
+            </section>
+          </section>
+
+          <label for="gender" class="form-label">Select Your Gender:</label><br>
+          <label class="radio"> <input type="radio"  name="gender" id="radiodefault" class="Gender" value="male">Male</label><br>
+          <label class="radio"> <input type="radio"  name="gender" id="radiodefault" value="female" class="Gender">Female</label><br>
+          <label class="radio"> <input type="radio"  name="gender" id="radiodefault" value="other"  class="Gender">Other</label>
+          <span id="errorgender"> ** Please Select Your Gender!! </span>
+
+
+
+
+          <section class="col-12" >
+            <label for="inputAddress" class="form-label">Address</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+            <span id="erroraddress"> ** This Field is Required!! </span>
+          </section>
+
+          <section class="row">
+          <section class="col-md-6">
+            <label for="inputCity" class="form-label">City</label>
+            <input type="text" class="form-control" id="inputCity">
+            <span id="errorcity"> ** This Field is Required!! </span>
+          </section>
+          <section class="col-md-4">
+            <label for="inputState" class="form-label">State</label>
+            <select id="inputState" class="form-select">
+                <option value="" selected="selected" >Please Select</option>
+              <option >Punjab</option>
+              <option >Delhi</option>
+              <option >Bihar</option>
+              <option >Odisha</option>
+              <option >Kerla</option>
+              <option >Tamil Nadu</option>
+              
+            </select>
+            <span id="errorstate"> ** This Field is Required!! </span>
+
+          </section>
+          <section class="col-md-2">
+            <label for="inputZip" class="form-label">Zip</label>
+            <input type="text" class="form-control" id="inputZip">
+            <span id="errorzip"> ** This Field is Required!! </span>
+          </section>
+        </section>
+
+
+
+
+        <section class="mb-2.5">
+            <label for="InputEmail" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp">
+            <section id="emailHelp" class="form-text">We'll never share your email with anyone else.</section>
+            <span id="erroremail"> ** This Field is Required!! </span>
+        </section>
+          <section class="mb-2.5">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="InputPassword">
+            <span id="errorpassword"> ** Please Enter Your Password!! </span>
+
+            <section id="passwordHelpBlock" class="form-text">
+                Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+              </section>
+          </section>
+          <section class="mb-2.5 form-check">
+            <input type="checkbox" value="yes" name='terms1' id='terms'>  
+            I Agree to <a href='#' >Terms and Conditions </a>  
+            <span id="checked"> ** Please Accept Our Terms and Condition!! </span>
+
+
+          </section>
+          <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+        
+        
+        
+
+    </section>
+</section>
+
+
+</section>
+
+
+    </section>
+    
+</body>
+
+
+
+<style>
+    .form{
+        background-image: url("background.jpg");
+        padding: 10px;
+    }
+    span{
+        display: none;
+        color:red;
+    }
+</style>
+</html>
